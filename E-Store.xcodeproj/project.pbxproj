@@ -16,6 +16,8 @@
 		910468082AD132E900107712 /* E_StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468072AD132E900107712 /* E_StoreTests.swift */; };
 		910468122AD132E900107712 /* E_StoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468112AD132E900107712 /* E_StoreUITests.swift */; };
 		910468142AD132E900107712 /* E_StoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468132AD132E900107712 /* E_StoreUITestsLaunchTests.swift */; };
+		910468262AD137BF00107712 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910468252AD137BF00107712 /* Login.storyboard */; };
+		9104682A2AD1389600107712 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468292AD1389600107712 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		9104680D2AD132E900107712 /* E-StoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-StoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910468112AD132E900107712 /* E_StoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_StoreUITests.swift; sourceTree = "<group>"; };
 		910468132AD132E900107712 /* E_StoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_StoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		910468252AD137BF00107712 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		910468292AD1389600107712 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,7 @@
 			children = (
 				910467F02AD132E800107712 /* AppDelegate.swift */,
 				910467F22AD132E800107712 /* SceneDelegate.swift */,
-				910467F42AD132E800107712 /* ViewController.swift */,
-				910467F62AD132E800107712 /* Main.storyboard */,
+				910468202AD1372900107712 /* Presentation */,
 				910467F92AD132E900107712 /* Assets.xcassets */,
 				910467FB2AD132E900107712 /* LaunchScreen.storyboard */,
 				910467FE2AD132E900107712 /* Info.plist */,
@@ -125,6 +128,33 @@
 				910468132AD132E900107712 /* E_StoreUITestsLaunchTests.swift */,
 			);
 			path = "E-StoreUITests";
+			sourceTree = "<group>";
+		};
+		910468202AD1372900107712 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				910468222AD1374D00107712 /* Login */,
+				910468212AD1374500107712 /* Main */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		910468212AD1374500107712 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				910467F62AD132E800107712 /* Main.storyboard */,
+				910467F42AD132E800107712 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		910468222AD1374D00107712 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				910468252AD137BF00107712 /* Login.storyboard */,
+				910468292AD1389600107712 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910468262AD137BF00107712 /* Login.storyboard in Resources */,
 				910467FD2AD132E900107712 /* LaunchScreen.storyboard in Resources */,
 				910467FA2AD132E900107712 /* Assets.xcassets in Resources */,
 				910467F82AD132E800107712 /* Main.storyboard in Resources */,
@@ -258,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9104682A2AD1389600107712 /* LoginViewController.swift in Sources */,
 				910467F52AD132E800107712 /* ViewController.swift in Sources */,
 				910467F12AD132E800107712 /* AppDelegate.swift in Sources */,
 				910467F32AD132E800107712 /* SceneDelegate.swift in Sources */,
@@ -445,11 +477,14 @@
 				DEVELOPMENT_TEAM = ZN33ZJFC65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "E-Store/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TokoKita;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,9 +492,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "nae.E-Store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,11 +511,14 @@
 				DEVELOPMENT_TEAM = ZN33ZJFC65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "E-Store/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TokoKita;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,9 +526,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "nae.E-Store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
