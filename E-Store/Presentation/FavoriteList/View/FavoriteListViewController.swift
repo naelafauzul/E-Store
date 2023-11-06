@@ -1,39 +1,34 @@
 //
-//  ProductListController.swift
+//  FavoriteListViewController.swift
 //  E-Store
 //
-//  Created by Naela Fauzul Muna on 15/10/23.
+//  Created by Naela Fauzul Muna on 06/11/23.
 //
 
 import UIKit
-import Kingfisher
 
-class ProductListController: UIViewController {
+class FavoriteListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var category: Category!
+    
     var products: [Product] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
         setup()
-        loadProducts()
+        loadFavorites()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    func setup() {
-        title = category.name
+    func setup(){
+        title = "Favorites"
         tableView.register(UINib(nibName: "ProductViewCell", bundle: nil), forCellReuseIdentifier: "product_cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    func loadProducts() {
-        ApiService.shared.loadProducts(categoryId: category.id) { [weak self] (result) in
+    func loadFavorites(){
+        ApiService.shared.loadProducts(categoryId: 1) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let products):
@@ -46,14 +41,11 @@ class ProductListController: UIViewController {
             }
         }
     }
-    
-    @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+
 }
 
 // MARK: - UITableViewDataSource
-extension ProductListController: UITableViewDataSource {
+extension FavoriteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
@@ -74,6 +66,6 @@ extension ProductListController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension ProductListController: UITableViewDelegate {
+extension FavoriteListViewController: UITableViewDelegate {
     
 }

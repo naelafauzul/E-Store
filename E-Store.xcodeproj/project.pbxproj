@@ -11,8 +11,6 @@
 		6D3317EF115CC6367FE3E7FA /* Pods_E_StoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0309471D407D8AD607EEF9 /* Pods_E_StoreTests.framework */; };
 		910467F12AD132E800107712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910467F02AD132E800107712 /* AppDelegate.swift */; };
 		910467F32AD132E800107712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910467F22AD132E800107712 /* SceneDelegate.swift */; };
-		910467F52AD132E800107712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910467F42AD132E800107712 /* ViewController.swift */; };
-		910467F82AD132E800107712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910467F62AD132E800107712 /* Main.storyboard */; };
 		910467FA2AD132E900107712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910467F92AD132E900107712 /* Assets.xcassets */; };
 		910467FD2AD132E900107712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910467FB2AD132E900107712 /* LaunchScreen.storyboard */; };
 		910468082AD132E900107712 /* E_StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468072AD132E900107712 /* E_StoreTests.swift */; };
@@ -20,6 +18,14 @@
 		910468142AD132E900107712 /* E_StoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468132AD132E900107712 /* E_StoreUITestsLaunchTests.swift */; };
 		910468262AD137BF00107712 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910468252AD137BF00107712 /* Login.storyboard */; };
 		9104682A2AD1389600107712 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910468292AD1389600107712 /* LoginViewController.swift */; };
+		913A10852AF7808400413AA7 /* CategoryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A10842AF7808400413AA7 /* CategoryListInteractor.swift */; };
+		913A10872AF7819000413AA7 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A10862AF7819000413AA7 /* CategoryListRouter.swift */; };
+		913A10892AF899B300413AA7 /* CategoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A10882AF899B300413AA7 /* CategoryListPresenter.swift */; };
+		913A108D2AF8AC9100413AA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A108C2AF8AC9100413AA7 /* MainViewController.swift */; };
+		913A108F2AF8ACE300413AA7 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A108E2AF8ACE300413AA7 /* MainRouter.swift */; };
+		913A10952AF8B4B300413AA7 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A10942AF8B4B300413AA7 /* Favorite.storyboard */; };
+		913A10992AF8B5DE00413AA7 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */; };
+		913A109B2AF8C89900413AA7 /* ProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913A109A2AF8C89900413AA7 /* ProductViewCell.xib */; };
 		918569B82ADBA49900E22C2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918569B72ADBA49900E22C2D /* Category.swift */; };
 		918569BB2ADBA55B00E22C2D /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918569BA2ADBA55B00E22C2D /* Category.storyboard */; };
 		918569BF2ADBA61F00E22C2D /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */; };
@@ -62,8 +68,6 @@
 		910467ED2AD132E800107712 /* E-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910467F02AD132E800107712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		910467F22AD132E800107712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		910467F42AD132E800107712 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		910467F72AD132E800107712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		910467F92AD132E900107712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		910467FC2AD132E900107712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		910467FE2AD132E900107712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 		910468132AD132E900107712 /* E_StoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_StoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		910468252AD137BF00107712 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		910468292AD1389600107712 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		913A10842AF7808400413AA7 /* CategoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListInteractor.swift; sourceTree = "<group>"; };
+		913A10862AF7819000413AA7 /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
+		913A10882AF899B300413AA7 /* CategoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListPresenter.swift; sourceTree = "<group>"; };
+		913A108C2AF8AC9100413AA7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		913A108E2AF8ACE300413AA7 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		913A10942AF8B4B300413AA7 /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		913A109A2AF8C89900413AA7 /* ProductViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewCell.xib; sourceTree = "<group>"; };
 		918569B72ADBA49900E22C2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		918569BA2ADBA55B00E22C2D /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -199,10 +211,11 @@
 		910468202AD1372900107712 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				91B110632ADBDB83000D8E14 /* Product */,
-				918569B92ADBA54600E22C2D /* Category */,
-				910468222AD1374D00107712 /* Login */,
+				913A10902AF8B47B00413AA7 /* FavoriteList */,
 				910468212AD1374500107712 /* Main */,
+				91B110632ADBDB83000D8E14 /* Product */,
+				918569B92ADBA54600E22C2D /* CategoryList */,
+				910468222AD1374D00107712 /* Login */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -210,8 +223,8 @@
 		910468212AD1374500107712 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				910467F62AD132E800107712 /* Main.storyboard */,
-				910467F42AD132E800107712 /* ViewController.swift */,
+				913A108B2AF8AC2300413AA7 /* Router */,
+				913A108A2AF8AC1C00413AA7 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -225,6 +238,73 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		913A10802AF7801200413AA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				918569BA2ADBA55B00E22C2D /* Category.storyboard */,
+				918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */,
+				918569C02ADBC91400E22C2D /* CategoryViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		913A10812AF7802B00413AA7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				913A10842AF7808400413AA7 /* CategoryListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		913A10822AF7803600413AA7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				913A10882AF899B300413AA7 /* CategoryListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		913A10832AF7804000413AA7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				913A10862AF7819000413AA7 /* CategoryListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		913A108A2AF8AC1C00413AA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				913A108C2AF8AC9100413AA7 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		913A108B2AF8AC2300413AA7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				913A108E2AF8ACE300413AA7 /* MainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		913A10902AF8B47B00413AA7 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				913A10932AF8B49C00413AA7 /* View */,
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		913A10932AF8B49C00413AA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				913A10942AF8B4B300413AA7 /* Favorite.storyboard */,
+				913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		918569B62ADBA47C00E22C2D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,14 +315,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		918569B92ADBA54600E22C2D /* Category */ = {
+		918569B92ADBA54600E22C2D /* CategoryList */ = {
 			isa = PBXGroup;
 			children = (
-				918569BA2ADBA55B00E22C2D /* Category.storyboard */,
-				918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */,
-				918569C02ADBC91400E22C2D /* CategoryViewCell.swift */,
+				913A10832AF7804000413AA7 /* Router */,
+				913A10822AF7803600413AA7 /* Presenter */,
+				913A10812AF7802B00413AA7 /* Interactor */,
+				913A10802AF7801200413AA7 /* View */,
 			);
-			path = Category;
+			path = CategoryList;
 			sourceTree = "<group>";
 		};
 		91B110632ADBDB83000D8E14 /* Product */ = {
@@ -251,6 +332,7 @@
 				91B110642ADBDBA7000D8E14 /* Product.storyboard */,
 				91B110662ADBDBD5000D8E14 /* ProductListController.swift */,
 				91EB2D032AF54961000AA563 /* ProductViewCell.swift */,
+				913A109A2AF8C89900413AA7 /* ProductViewCell.xib */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -381,10 +463,11 @@
 			files = (
 				918569BB2ADBA55B00E22C2D /* Category.storyboard in Resources */,
 				910468262AD137BF00107712 /* Login.storyboard in Resources */,
+				913A109B2AF8C89900413AA7 /* ProductViewCell.xib in Resources */,
 				910467FD2AD132E900107712 /* LaunchScreen.storyboard in Resources */,
 				910467FA2AD132E900107712 /* Assets.xcassets in Resources */,
+				913A10952AF8B4B300413AA7 /* Favorite.storyboard in Resources */,
 				91B110652ADBDBA7000D8E14 /* Product.storyboard in Resources */,
-				910467F82AD132E800107712 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,16 +597,21 @@
 			files = (
 				9104682A2AD1389600107712 /* LoginViewController.swift in Sources */,
 				91EB2D0E2AF62578000AA563 /* Images.swift in Sources */,
+				913A10992AF8B5DE00413AA7 /* FavoriteListViewController.swift in Sources */,
+				913A10872AF7819000413AA7 /* CategoryListRouter.swift in Sources */,
+				913A108F2AF8ACE300413AA7 /* MainRouter.swift in Sources */,
 				918569B82ADBA49900E22C2D /* Category.swift in Sources */,
 				91EB2D042AF54961000AA563 /* ProductViewCell.swift in Sources */,
 				918569BF2ADBA61F00E22C2D /* CategoryListViewController.swift in Sources */,
-				910467F52AD132E800107712 /* ViewController.swift in Sources */,
 				91966AAC2AF648340092E0B5 /* Api.swift in Sources */,
+				913A108D2AF8AC9100413AA7 /* MainViewController.swift in Sources */,
+				913A10892AF899B300413AA7 /* CategoryListPresenter.swift in Sources */,
 				910467F12AD132E800107712 /* AppDelegate.swift in Sources */,
 				91EB2D092AF61E59000AA563 /* ApiService.swift in Sources */,
 				910467F32AD132E800107712 /* SceneDelegate.swift in Sources */,
 				91EB2D062AF61BEE000AA563 /* Product.swift in Sources */,
 				918569C12ADBC91400E22C2D /* CategoryViewCell.swift in Sources */,
+				913A10852AF7808400413AA7 /* CategoryListInteractor.swift in Sources */,
 				91B110672ADBDBD5000D8E14 /* ProductListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,14 +649,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		910467F62AD132E800107712 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				910467F72AD132E800107712 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		910467FB2AD132E900107712 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -715,7 +795,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -751,7 +831,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

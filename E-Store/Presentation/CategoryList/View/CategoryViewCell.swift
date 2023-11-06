@@ -20,10 +20,11 @@ class CategoryViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        setup()
     }
     
-    func setup(){
-        thumbImageView.layer.borderWidth = 8
+    func setup() {
+        thumbImageView.layer.cornerRadius = 8
         thumbImageView.layer.masksToBounds = true
     }
 
