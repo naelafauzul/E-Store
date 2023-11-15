@@ -15,6 +15,16 @@ struct Product: Codable {
     let category: Category?
     let images: [String]
     
+    //convert productdata menjadi product
+    init(_ data: ProductData){
+        self.id = Int(data.productId)
+        self.title = data.title ?? ""
+        self.price = data.price
+        self.description = data.desc ?? ""
+        self.category = nil
+        self.images = Array(data.images as? Set<String> ?? Set<String>())
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title

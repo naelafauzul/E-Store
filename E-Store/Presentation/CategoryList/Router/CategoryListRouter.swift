@@ -15,10 +15,9 @@ protocol CategoryListRouter {
 class DefaultCategoryListRouter: CategoryListRouter {
     private var navigationController: UINavigationController!
     
-    //membuat categoryList
     func create() -> UIViewController {
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier:"CategoryListViewController") as! CategoryListViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
         let navigationController = UINavigationController(rootViewController: viewController)
         
         let interactor = DefaultCategoryListInteractor(apiService: ApiService.shared)
@@ -30,11 +29,7 @@ class DefaultCategoryListRouter: CategoryListRouter {
     }
     
     func showProductList(category: Category) {
-        //memanggil product list controller
-        let storyboard = UIStoryboard(name: "Product", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ProductListController") as! ProductListController
-        viewController.category = category
-        navigationController?.pushViewController(viewController, animated: true)
+        let viewController = DefaultProductRouter().create(category: category)
+        navigationController.pushViewController(viewController, animated: true)
     }
-    
 }

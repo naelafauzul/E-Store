@@ -15,17 +15,14 @@ class DefaultMainRouter: MainRouter {
     func create() -> UIViewController {
         let viewController = MainViewController()
         
-        let favoriteListViewController = UIStoryboard(name: "Favorite", bundle: nil)
-            .instantiateViewController(withIdentifier: "FavoriteListViewController") as! FavoriteListViewController
-        let favoriteListNavigationController = UINavigationController(rootViewController: favoriteListViewController)
-        
         let viewControllers: [UIViewController] = [
             DefaultCategoryListRouter().create(),
-            favoriteListNavigationController 
+            DefaultFavoriteListRouter().create(),
+            DefaultProfileRouter().create()
         ]
-        
         viewController.viewControllers = viewControllers
         
         return viewController
     }
 }
+

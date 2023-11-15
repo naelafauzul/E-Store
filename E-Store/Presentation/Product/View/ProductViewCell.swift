@@ -7,12 +7,22 @@
 
 import UIKit
 
+protocol ProductViewCellDelegate: AnyObject {
+    func ProductViewCellFavoriteButtonTapped(_ cell: ProductViewCell)
+}
+
 class ProductViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
+    
+    weak var delegate: ProductViewCellDelegate?
+    
+    @IBAction func FavoriteButtonTap(_ sender: Any) {
+        delegate?.ProductViewCellFavoriteButtonTapped(self)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

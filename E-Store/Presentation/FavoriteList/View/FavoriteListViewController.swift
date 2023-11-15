@@ -45,13 +45,16 @@ class FavoriteListViewController: UIViewController, FavoriteListView {
     }
     
     func loadFavorites() {
-        presenter.loadFavorites()
+        presenter?.loadFavorites()
     }
 }
 
 // MARK: - UITableViewDataSource
 extension FavoriteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let presenter = presenter else {
+            return 0 // Or handle this case accordingly
+        }
         return presenter.numberOfFavorites()
     }
     

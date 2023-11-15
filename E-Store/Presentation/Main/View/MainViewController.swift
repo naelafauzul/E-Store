@@ -30,6 +30,11 @@ class MainViewController: UITabBarController {
                 tabBarItem?.title = "Favorites"
                 tabBarItem?.image = UIImage(systemName: "star")
                 tabBarItem?.selectedImage = UIImage(systemName: "star.fill")
+                
+            case 2:
+                tabBarItem?.title = "Profile"
+                tabBarItem?.image = UIImage(systemName: "person")
+                tabBarItem?.selectedImage = UIImage(systemName: "person.fill")
             default:
                 break
             }
