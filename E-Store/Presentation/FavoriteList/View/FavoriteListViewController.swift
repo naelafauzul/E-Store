@@ -7,59 +7,62 @@
 
 import UIKit
 
-class FavoriteListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+import UIKit
+import Kingfisher
+
+protocol FavoriteListView: AnyObject {
+    func reloadData()
+}
+
+class FavoriteListViewController: UIViewController, FavoriteListView {
+    // MARK: CategoryListView Implementation
+    func reloadData() {
+        tableView.reloadData()
+    }
     
-    var products: [Product] = []
+    @IBOutlet weak var tableView: UITableView!
+    var presenter: FavoriteListPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         loadFavorites()
     }
     
-    func setup(){
+    func setup() {
         title = "Favorites"
         tableView.register(UINib(nibName: "ProductViewCell", bundle: nil), forCellReuseIdentifier: "product_cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    func loadFavorites(){
-        ApiService.shared.loadProducts(categoryId: 1) { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let products):
-                self.products = products
-                self.tableView.reloadData()
-            case .failure(let error):
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true)
-            }
-        }
+    func loadFavorites() {
+        presenter.loadFavorites()
     }
-
 }
 
 // MARK: - UITableViewDataSource
 extension FavoriteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return presenter.numberOfFavorites()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "product_cell", for: indexPath) as! ProductViewCell
         
-        let product = products[indexPath.row]
-        cell.thumbImageView.kf.setImage(with: URL(string: product.images.first ?? ""))
-        cell.nameLabel.text = product.title
-        cell.descriptionLabel.text = product.description
-        cell.priceLabel.text = String(format: "$%.0f", product.price)
-
-        
+        cell.thumbImageView.kf.setImage(with: URL(string: presenter.productImage(at: indexPath.row)))
+        cell.nameLabel.text = presenter.productName(at: indexPath.row)
+        cell.descriptionLabel.text = presenter.productDescription(at: indexPath.row)
+        cell.priceLabel.text = presenter.productPrice(at: indexPath.row)
+        cell.favoriteButton.isHidden = true
         
         return cell
     }
@@ -67,5 +70,8 @@ extension FavoriteListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension FavoriteListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }

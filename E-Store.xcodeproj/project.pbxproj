@@ -26,6 +26,16 @@
 		913A10952AF8B4B300413AA7 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A10942AF8B4B300413AA7 /* Favorite.storyboard */; };
 		913A10992AF8B5DE00413AA7 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */; };
 		913A109B2AF8C89900413AA7 /* ProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913A109A2AF8C89900413AA7 /* ProductViewCell.xib */; };
+		915892312AFF2D9000C9EBA9 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892302AFF2D9000C9EBA9 /* ProfileRouter.swift */; };
+		915892332AFF2DA700C9EBA9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892322AFF2DA700C9EBA9 /* ProfilePresenter.swift */; };
+		915892362AFF2DCF00C9EBA9 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892352AFF2DCF00C9EBA9 /* ProfileInteractor.swift */; };
+		915892382AFF2DE000C9EBA9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915892372AFF2DE000C9EBA9 /* Profile.storyboard */; };
+		9158923A2AFF2DF300C9EBA9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892392AFF2DF300C9EBA9 /* ProfileViewController.swift */; };
+		9158923D2AFF2EC800C9EBA9 /* FavoriteListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158923C2AFF2EC800C9EBA9 /* FavoriteListRouter.swift */; };
+		915892402AFF2F4300C9EBA9 /* FavoriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158923F2AFF2F4300C9EBA9 /* FavoriteListPresenter.swift */; };
+		915892422AFF2F5F00C9EBA9 /* FavoriteListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892412AFF2F5F00C9EBA9 /* FavoriteListInteractor.swift */; };
+		915892452AFF6BBB00C9EBA9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915892442AFF6BBB00C9EBA9 /* CoreDataService.swift */; };
+		915892482AFF6CFE00C9EBA9 /* EStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 915892462AFF6CFE00C9EBA9 /* EStore.xcdatamodeld */; };
 		918569B82ADBA49900E22C2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918569B72ADBA49900E22C2D /* Category.swift */; };
 		918569BB2ADBA55B00E22C2D /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918569BA2ADBA55B00E22C2D /* Category.storyboard */; };
 		918569BF2ADBA61F00E22C2D /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */; };
@@ -86,6 +96,16 @@
 		913A10942AF8B4B300413AA7 /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		913A109A2AF8C89900413AA7 /* ProductViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewCell.xib; sourceTree = "<group>"; };
+		915892302AFF2D9000C9EBA9 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		915892322AFF2DA700C9EBA9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		915892352AFF2DCF00C9EBA9 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		915892372AFF2DE000C9EBA9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		915892392AFF2DF300C9EBA9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9158923C2AFF2EC800C9EBA9 /* FavoriteListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListRouter.swift; sourceTree = "<group>"; };
+		9158923F2AFF2F4300C9EBA9 /* FavoriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListPresenter.swift; sourceTree = "<group>"; };
+		915892412AFF2F5F00C9EBA9 /* FavoriteListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListInteractor.swift; sourceTree = "<group>"; };
+		915892442AFF6BBB00C9EBA9 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		915892472AFF6CFE00C9EBA9 /* EStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EStore.xcdatamodel; sourceTree = "<group>"; };
 		918569B72ADBA49900E22C2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		918569BA2ADBA55B00E22C2D /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		918569BE2ADBA61F00E22C2D /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +207,7 @@
 				910467F92AD132E900107712 /* Assets.xcassets */,
 				910467FB2AD132E900107712 /* LaunchScreen.storyboard */,
 				910467FE2AD132E900107712 /* Info.plist */,
+				915892462AFF6CFE00C9EBA9 /* EStore.xcdatamodeld */,
 			);
 			path = "E-Store";
 			sourceTree = "<group>";
@@ -211,6 +232,7 @@
 		910468202AD1372900107712 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9158922B2AFF2D3700C9EBA9 /* Profile */,
 				913A10902AF8B47B00413AA7 /* FavoriteList */,
 				910468212AD1374500107712 /* Main */,
 				91B110632ADBDB83000D8E14 /* Product */,
@@ -291,6 +313,9 @@
 		913A10902AF8B47B00413AA7 /* FavoriteList */ = {
 			isa = PBXGroup;
 			children = (
+				915892432AFF2F6900C9EBA9 /* Interactor */,
+				9158923E2AFF2F1F00C9EBA9 /* Presenter */,
+				9158923B2AFF2EAC00C9EBA9 /* Router */,
 				913A10932AF8B49C00413AA7 /* View */,
 			);
 			path = FavoriteList;
@@ -303,6 +328,74 @@
 				913A10982AF8B5DE00413AA7 /* FavoriteListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9158922B2AFF2D3700C9EBA9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				915892342AFF2DB500C9EBA9 /* Interactor */,
+				9158922F2AFF2D6400C9EBA9 /* Router */,
+				9158922E2AFF2D5600C9EBA9 /* Presenter */,
+				9158922C2AFF2D4600C9EBA9 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9158922C2AFF2D4600C9EBA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				915892372AFF2DE000C9EBA9 /* Profile.storyboard */,
+				915892392AFF2DF300C9EBA9 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9158922E2AFF2D5600C9EBA9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				915892322AFF2DA700C9EBA9 /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9158922F2AFF2D6400C9EBA9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				915892302AFF2D9000C9EBA9 /* ProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		915892342AFF2DB500C9EBA9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				915892352AFF2DCF00C9EBA9 /* ProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9158923B2AFF2EAC00C9EBA9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9158923C2AFF2EC800C9EBA9 /* FavoriteListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9158923E2AFF2F1F00C9EBA9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9158923F2AFF2F4300C9EBA9 /* FavoriteListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		915892432AFF2F6900C9EBA9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				915892412AFF2F5F00C9EBA9 /* FavoriteListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		918569B62ADBA47C00E22C2D /* Entities */ = {
@@ -342,6 +435,7 @@
 			children = (
 				91EB2D082AF61E59000AA563 /* ApiService.swift */,
 				91966AAB2AF648340092E0B5 /* Api.swift */,
+				915892442AFF6BBB00C9EBA9 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -463,6 +557,7 @@
 			files = (
 				918569BB2ADBA55B00E22C2D /* Category.storyboard in Resources */,
 				910468262AD137BF00107712 /* Login.storyboard in Resources */,
+				915892382AFF2DE000C9EBA9 /* Profile.storyboard in Resources */,
 				913A109B2AF8C89900413AA7 /* ProductViewCell.xib in Resources */,
 				910467FD2AD132E900107712 /* LaunchScreen.storyboard in Resources */,
 				910467FA2AD132E900107712 /* Assets.xcassets in Resources */,
@@ -595,23 +690,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915892312AFF2D9000C9EBA9 /* ProfileRouter.swift in Sources */,
 				9104682A2AD1389600107712 /* LoginViewController.swift in Sources */,
 				91EB2D0E2AF62578000AA563 /* Images.swift in Sources */,
 				913A10992AF8B5DE00413AA7 /* FavoriteListViewController.swift in Sources */,
 				913A10872AF7819000413AA7 /* CategoryListRouter.swift in Sources */,
 				913A108F2AF8ACE300413AA7 /* MainRouter.swift in Sources */,
+				915892422AFF2F5F00C9EBA9 /* FavoriteListInteractor.swift in Sources */,
+				9158923A2AFF2DF300C9EBA9 /* ProfileViewController.swift in Sources */,
+				915892482AFF6CFE00C9EBA9 /* EStore.xcdatamodeld in Sources */,
 				918569B82ADBA49900E22C2D /* Category.swift in Sources */,
 				91EB2D042AF54961000AA563 /* ProductViewCell.swift in Sources */,
 				918569BF2ADBA61F00E22C2D /* CategoryListViewController.swift in Sources */,
 				91966AAC2AF648340092E0B5 /* Api.swift in Sources */,
 				913A108D2AF8AC9100413AA7 /* MainViewController.swift in Sources */,
 				913A10892AF899B300413AA7 /* CategoryListPresenter.swift in Sources */,
+				915892452AFF6BBB00C9EBA9 /* CoreDataService.swift in Sources */,
 				910467F12AD132E800107712 /* AppDelegate.swift in Sources */,
+				915892362AFF2DCF00C9EBA9 /* ProfileInteractor.swift in Sources */,
 				91EB2D092AF61E59000AA563 /* ApiService.swift in Sources */,
 				910467F32AD132E800107712 /* SceneDelegate.swift in Sources */,
 				91EB2D062AF61BEE000AA563 /* Product.swift in Sources */,
+				915892402AFF2F4300C9EBA9 /* FavoriteListPresenter.swift in Sources */,
 				918569C12ADBC91400E22C2D /* CategoryViewCell.swift in Sources */,
 				913A10852AF7808400413AA7 /* CategoryListInteractor.swift in Sources */,
+				9158923D2AFF2EC800C9EBA9 /* FavoriteListRouter.swift in Sources */,
+				915892332AFF2DA700C9EBA9 /* ProfilePresenter.swift in Sources */,
 				91B110672ADBDBD5000D8E14 /* ProductListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -990,6 +1094,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		915892462AFF6CFE00C9EBA9 /* EStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				915892472AFF6CFE00C9EBA9 /* EStore.xcdatamodel */,
+			);
+			currentVersion = 915892472AFF6CFE00C9EBA9 /* EStore.xcdatamodel */;
+			path = EStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 910467E52AD132E800107712 /* Project object */;
 }
