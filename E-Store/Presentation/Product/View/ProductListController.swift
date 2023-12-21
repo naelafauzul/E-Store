@@ -59,10 +59,14 @@ class ProductListController: UIViewController, ProductView {
         tableView.delegate = self
     }
     
+    @IBAction func addButtonTapped(_ sender: Any) {
+        presenter.addProduct()
+    }
     
     func loadProducts() {
         presenter.loadProducts()
     }
+    
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)

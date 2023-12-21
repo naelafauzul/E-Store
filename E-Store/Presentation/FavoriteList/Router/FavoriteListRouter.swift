@@ -20,7 +20,7 @@ class DefaultFavoriteListRouter: FavoriteListRouter {
         let viewController = storyboard.instantiateViewController(withIdentifier: "FavoriteListViewController") as! FavoriteListViewController
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        let interactor = DefaultFavoriteListInteractor()
+        let interactor = DefaultFavoriteListInteractor(coreDataService: CoreDataService.shared)
         let presenter = DefaultFavoriteListPresenter(view: viewController, interactor: interactor, router: self)
         viewController.presenter = presenter
         

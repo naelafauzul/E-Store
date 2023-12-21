@@ -7,6 +7,8 @@ target 'E-Store' do
 
   # Pods for E-Store
   pod 'Moya/RxSwift', '~> 15.0'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Valet'
 
   target 'E-StoreTests' do
     inherit! :search_paths

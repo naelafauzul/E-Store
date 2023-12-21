@@ -18,6 +18,7 @@ protocol ProductPresenter {
     func selectProduct(at index: Int)
     func toogleFavorite(at index: Int)
     func isFavorited(at index: Int) -> Bool
+    func addProduct()
 }
 
 
@@ -37,7 +38,7 @@ class DefaultProductPresenter: ProductPresenter {
     func toogleFavorite(at index: Int) {
         let product = products[index]
         if isFavorited(at: index) {
-            interactor.deleteFavorite(productId: product.id)
+            interactor.removeFavorite(productId: product.id)
         } else {
             interactor.addFavorite(product: product)
         }
@@ -89,7 +90,15 @@ class DefaultProductPresenter: ProductPresenter {
         router.showProduct(products[index])
     }
     
+    func addProduct() {
+        if interactor.canAddProduct() {
+            
+        } else {
+            router.presentLogin {
+                self.addProduct()
+            }
+        }
+    }
+    
     
 }
-
-

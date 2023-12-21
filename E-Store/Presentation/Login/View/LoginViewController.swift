@@ -7,14 +7,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol LoginView: AnyObject {
+    
+}
 
-    @IBOutlet weak var titleLabel: UILabel!
+class LoginViewController: UIViewController, LoginView {
+
     @IBOutlet weak var emailTitleLable: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTitleLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
+    var presenter: LoginPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     func setup() {
-        titleLabel.text = "Masuk"
+        title = "Masuk"
         emailTitleLable.text = "Alamat Email"
         emailTextField.placeholder = "Email Anda"
         passwordTextField.placeholder = "Kata sandi"
@@ -38,14 +43,5 @@ class LoginViewController: UIViewController {
         print("password: \(String(describing: passwordTextField.text))")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

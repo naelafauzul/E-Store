@@ -57,10 +57,10 @@ class CoreDataService {
         //        return products
         
     }
-    func deleteFavorite(productId: Int) {
+    
+    func removeFavorite(productId: Int) {
         let request = ProductData.fetchRequest()
         request.predicate = NSPredicate(format: "productId = \(productId)")
-        
         if let data = try? context.fetch(request).first {
             context.delete(data)
             
@@ -68,7 +68,6 @@ class CoreDataService {
             try? context.save()
             #endif
         }
-        
     }
     
     func isFavorited(productId: Int) -> Bool {

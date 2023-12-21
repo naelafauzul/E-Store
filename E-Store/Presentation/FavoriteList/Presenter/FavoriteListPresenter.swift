@@ -57,11 +57,11 @@ class DefaultFavoriteListPresenter: FavoriteListPresenter {
     }
     
     func removeFavorite(at index: Int) {
-        
+        let favorite = favorites.remove(at: index)
+        interactor.removeFavorite(productId: favorite.id)
     }
     
     func selectFavorite(at index: Int) {
-        
+        router.showProduct(favorites[index])
     }
 }
-

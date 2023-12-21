@@ -11,11 +11,13 @@ protocol ProductInteractor {
     func categoryName() -> String
     func loadProduct(completion: @escaping (Result<[Product], Error>) -> Void)
     func addFavorite(product: Product)
-    func deleteFavorite(productId: Int)
+    func removeFavorite(productId: Int)
     func isFavorited(productId: Int) -> Bool
+    func canAddProduct() -> Bool
 }
 
 class DefaultProductInteractor: ProductInteractor {
+    
     private let category: Category
     private let apiService: ApiService
     private let coreDataService: CoreDataService
@@ -41,8 +43,8 @@ class DefaultProductInteractor: ProductInteractor {
         coreDataService.saveFavorite(product: product)
     }
     
-    func deleteFavorite(productId: Int) {
-        coreDataService.deleteFavorite(productId: productId)
+    func removeFavorite(productId: Int) {
+        coreDataService.removeFavorite(productId: productId)
     }
     
     func isFavorited(productId: Int) -> Bool {
@@ -51,6 +53,10 @@ class DefaultProductInteractor: ProductInteractor {
     
     func categoryName() -> String {
         return category.name
+    }
+    
+    func canAddProduct() -> Bool {
+        return false
     }
 }
 
