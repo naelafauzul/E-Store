@@ -11,6 +11,8 @@ import Moya
 enum Api {
     case categories
     case products (Int)
+    case login(String, String) //email, password
+    case profile
 }
 
 extension Api: TargetType {
@@ -24,6 +26,10 @@ extension Api: TargetType {
             return "api/v1/categories"
         case .products(let categoryId):
             return "/api/v1/categories/\(categoryId)/products"
+        case .login:
+            return "/api/v1/auth/login"
+        case .profile:
+            return "/api/v1/auth/profile"
         }
     }
     
@@ -32,6 +38,10 @@ extension Api: TargetType {
         case .categories:
             return .get
         case .products:
+            return .get
+        case .login:
+            return .post
+        case .profile:
             return .get
         }
     }
@@ -42,12 +52,20 @@ extension Api: TargetType {
             return .requestPlain
         case .products:
             return .requestPlain
+        case .login(let username, let password):
+            return .requestParameters(parameters: [
+                "email": username,
+                "password": password
+            ],
+            //parameter akan diencode sebagai JSON sebelum dikirim ke server.
+            encoding: JSONEncoding.default //
+            )
+        case .profile:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         return nil
     }
-    
-    
 }

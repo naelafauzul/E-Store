@@ -18,6 +18,14 @@ class DefaultLoginInteractor: LoginInteractor {
     }
     
     func login(username: String, password: String, completion: @escaping (Error?) -> Void) {
+        apiService.login(username: username, password: password) { result in
+            switch result {
+            case .success:
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
         
     }
 }

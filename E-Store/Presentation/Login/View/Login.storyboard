@@ -46,6 +46,9 @@
                                 <color key="tintColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rpk-DE-sB2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -69,14 +72,15 @@
                     <navigationItem key="navigationItem" title="Login" id="SsZ-24-GUz">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="ysu-XE-RCN">
                             <connections>
-                                <action selector="closeButtonTapped:" destination="Y6W-OH-hqX" id="4cX-v1-GC8"/>
+                                <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" id="an1-Tx-Cqw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="cancelButton" destination="ysu-XE-RCN" id="95K-CK-6u8"/>
                         <outlet property="emailTextField" destination="iBC-2J-ZIQ" id="aeG-CG-PDq"/>
-                        <outlet property="emailTitleLabel" destination="Odq-xa-aYj" id="Eq8-ph-cWB"/>
+                        <outlet property="emailTitleLable" destination="Odq-xa-aYj" id="ipL-Jt-skj"/>
                         <outlet property="loginButton" destination="en6-WO-dY9" id="G3q-0f-Lhf"/>
                         <outlet property="passwordTextField" destination="LTR-H2-axw" id="ZHt-AF-EoO"/>
                         <outlet property="passwordTitleLabel" destination="dOH-8a-QBr" id="pco-sl-St3"/>
@@ -92,7 +96,7 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

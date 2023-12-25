@@ -16,12 +16,14 @@ struct AccessToken: Codable {
         case refreshToken = "refresh_token"
     }
     
+    //dari data ke object
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.accessToken = try container.decode(String.self, forKey: .accessToken)
         self.refreshToken = try container.decode(String.self, forKey: .refreshToken)
     }
     
+    //dari object ke data
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.accessToken, forKey: .accessToken)

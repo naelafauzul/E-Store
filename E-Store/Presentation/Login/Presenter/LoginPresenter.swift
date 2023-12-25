@@ -23,6 +23,12 @@ class DefaultLoginPresenter: LoginPresenter {
     }
     
     func login(username: String, password: String) {
-        
+        interactor.login(username: username, password: password) { (error) in
+            if let error = error {
+                print(String(describing: error))
+            } else {
+                self.router.completeLogin()
+            }
+        }
     }
 }

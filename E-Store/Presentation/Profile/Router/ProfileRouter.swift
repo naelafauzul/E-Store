@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileRouter {
     func create() -> UIViewController
+    func presentLogin(completion: @escaping () -> Void)
 }
 
 class DefaultProfileRouter: ProfileRouter {
@@ -25,5 +26,12 @@ class DefaultProfileRouter: ProfileRouter {
         
         self.navigationController = navigationController
         return navigationController
+    }
+    
+    func presentLogin(completion: @escaping () -> Void) {
+        let viewController = DefaultLoginRouter().create {
+            self.navigationController?.dismiss(animated: true, completion: completion)
+        }
+        self.navigationController?.present(viewController, animated: true)
     }
 }

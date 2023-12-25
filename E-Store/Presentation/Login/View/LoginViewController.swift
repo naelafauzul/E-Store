@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, LoginView {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTitleLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var loginButton: UIButton!
     
     var presenter: LoginPresenter!
@@ -39,9 +40,11 @@ class LoginViewController: UIViewController, LoginView {
         
     }
     @IBAction func loginButtonTapped(_ sender: Any) {
-        print("email: \(String(describing: emailTextField.text))")
-        print("password: \(String(describing: passwordTextField.text))")
+        presenter.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
-   
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
