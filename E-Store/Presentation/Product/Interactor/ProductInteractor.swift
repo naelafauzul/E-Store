@@ -21,11 +21,13 @@ class DefaultProductInteractor: ProductInteractor {
     private let category: Category
     private let apiService: ApiService
     private let coreDataService: CoreDataService
+    private let accessTokenStore: AccessTokenStore
     
-    init(category: Category, apiService: ApiService, coreDataService: CoreDataService) {
+    init(category: Category, apiService: ApiService, coreDataService: CoreDataService, accessTokenStore: AccessTokenStore) {
         self.category = category
         self.apiService = apiService
         self.coreDataService = coreDataService
+        self.accessTokenStore = accessTokenStore
     }
     
     func loadProduct(completion: @escaping (Result<[Product], Error>) -> Void) {
@@ -56,7 +58,7 @@ class DefaultProductInteractor: ProductInteractor {
     }
     
     func canAddProduct() -> Bool {
-        return false
+        return accessTokenStore.accessToken != nil
     }
 }
 

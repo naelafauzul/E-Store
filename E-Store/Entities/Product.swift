@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Codable {
+struct Product {
     let id: Int
     let title: String
     let price: Double
@@ -15,8 +15,8 @@ struct Product: Codable {
     let category: Category?
     let images: [String]
     
-    //convert productdata menjadi product
-    init(_ data: ProductData){
+    //inisialisasi dari ProductData (Core Data)
+    init(_ data: ProductData) {
         self.id = Int(data.productId)
         self.title = data.title ?? ""
         self.price = data.price
@@ -25,24 +25,43 @@ struct Product: Codable {
         self.images = Array(data.images as? Set<String> ?? Set<String>())
     }
     
+    init(title: String, price: Double, description: String, category: Category, images: [String]) {
+        self.id = 0
+        self.title = title
+        self.price = price
+        self.description = description
+        self.category = category
+        self.images = images
+    }
+}
+
+extension Product: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case price
         case description
         case category
+        case categoryId
         case images
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
-        self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
-        self.price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0.0
-        self.description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
-        self.category = try container.decodeIfPresent(Category.self, forKey: .category) 
-        self.images = try container.decodeIfPresent([String].self, forKey: .images) ?? []
-        
-        
+        id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
+        title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0
+        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+        category = try container.decodeIfPresent(Category.self, forKey: .category)
+        images = try container.decodeIfPresent([String].self, forKey: .images) ?? []
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(Int(price), forKey: .price)
+        try container.encode(description, forKey: .description)
+        try container.encode(category?.id ?? 0, forKey: .categoryId) //hanya categoryId nya ang dikirim bukan category
+        try container.encode(images, forKey: .images)
     }
 }

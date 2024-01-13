@@ -12,15 +12,18 @@ class CoreDataService {
     static var shared: CoreDataService = CoreDataService()
     private init(){}
     
+    //Mendapatkan instance NSManagedObjectContext dari AppDelegate
     private var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.context
     }
     
     func saveFavorite(product: Product) {
+        //membuat fetch request untuk mencari data produk dengan predicate berdasarkan product.id
         let request = ProductData.fetchRequest()
         request.predicate = NSPredicate(format: "productId = \(product.id)")
         
+        //membuat objek productData untuk diisi atau dibuat baru
         let productData: ProductData
         if let data = try? context.fetch(request).first {
             productData = data
@@ -28,6 +31,7 @@ class CoreDataService {
             productData = ProductData(context: context)
         }
         
+        // Mengisi properti-properti objek ProductData dengan nilai dari objek Product
         productData.productId = Int64(product.id)
         productData.title = product.title
         productData.desc = product.description
@@ -35,16 +39,23 @@ class CoreDataService {
         productData.images = NSSet(array: product.images)
         productData.createdAt = Date()
  
-        
+        // Menyimpan perubahan ke Core Data hanya dalam mode DEBUG
         #if DEBUG
-        try? context.save()
+        do {
+            try context.save()
+        } catch {
+            print(String(describing: error))
+        }
         #endif
-    }
-    func fetchFavorites()-> [Product] {
+            }
+    
+    //mengambil daftar produk favorit dari Core Data
+    func fetchFavorites() -> [Product] {
+
         let request = ProductData.fetchRequest()
         let datas = (try? context.fetch(request)) ?? []
         
-        //cara cepat
+        //cara cepat untuk konversi ke tipe Product
         return datas.compactMap { Product($0)}
         
         //        //cara lama

@@ -107,6 +107,33 @@ class ApiService {
             }
             .disposed(by: disposeBag)
     }
+    
+    func uploadFile(data: Data, completion: @escaping (Result<File, Error>) -> Void) {
+        apiProvider.rx.request(.uploadFile(data))
+            .map(File.self)
+            .subscribe { event in
+                switch event {
+                case .success(let file):
+                    completion(.success(file))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        
+    }
+    
+    func createProduct(product: Product, completion: @escaping (Result<Product, Error>) -> Void) {
+        apiProvider.rx.request(.createProduct(product))
+            .map(Product.self)
+            .subscribe { event in
+                switch event {
+                case .success(let product):
+                    completion(.success(product))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
 
     
     //networking api manual

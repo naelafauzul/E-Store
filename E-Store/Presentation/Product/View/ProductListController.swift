@@ -68,7 +68,7 @@ class ProductListController: UIViewController, ProductView {
     }
     
     
-    @IBAction func backButtonTapped(_ sender: Any) {
+    @IBAction override func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 }

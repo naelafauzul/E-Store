@@ -92,7 +92,9 @@ class DefaultProductPresenter: ProductPresenter {
     
     func addProduct() {
         if interactor.canAddProduct() {
-            
+            router.presentNewProduct {
+                self.loadProducts()
+            }
         } else {
             router.presentLogin {
                 self.addProduct()

@@ -13,6 +13,8 @@ enum Api {
     case products (Int)
     case login(String, String) //email, password
     case profile
+    case uploadFile(Data)
+    case createProduct(Product)
 }
 
 extension Api: TargetType {
@@ -30,6 +32,10 @@ extension Api: TargetType {
             return "/api/v1/auth/login"
         case .profile:
             return "/api/v1/auth/profile"
+        case .uploadFile:
+            return "/api/v1/files/upload"
+        case .createProduct:
+            return "/api/v1/products/"
         }
     }
     
@@ -43,6 +49,10 @@ extension Api: TargetType {
             return .post
         case .profile:
             return .get
+        case .uploadFile:
+            return .post
+        case .createProduct:
+            return .post
         }
     }
     
@@ -62,6 +72,10 @@ extension Api: TargetType {
             )
         case .profile:
             return .requestPlain
+        case .uploadFile(let data):
+            return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file")])
+        case .createProduct(let product):
+            return .requestJSONEncodable(product)
         }
     }
     
